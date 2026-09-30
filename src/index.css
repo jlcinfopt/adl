@@ -1,0 +1,129 @@
+@import "tailwindcss";
+
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 10mm 12mm;
+  }
+
+  *, *::before, *::after {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    text-shadow: none !important;
+  }
+
+  html, body {
+    background-color: #ffffff !important;
+    color: #0f172a !important;
+    font-size: 11pt !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* Hide interactive elements, navs, notifications, and buttons */
+  .no-print, 
+  header, 
+  nav, 
+  footer, 
+  button, 
+  select, 
+  input, 
+  .no-print-area,
+  #toast-container {
+    display: none !important;
+  }
+
+  /* Modal un-boxing for print */
+  .fixed, .absolute {
+    position: static !important;
+  }
+
+  .bg-black\/60,
+  .bg-slate-900\/70,
+  .bg-slate-900\/80,
+  .backdrop-blur-xs,
+  .backdrop-blur-sm,
+  .backdrop-blur-md {
+    background: transparent !important;
+    backdrop-filter: none !important;
+  }
+
+  .overflow-y-auto,
+  .overflow-hidden,
+  .max-h-\[95vh\],
+  .max-h-\[90vh\] {
+    overflow: visible !important;
+    max-height: none !important;
+  }
+
+  .shadow-2xl, .shadow-xl, .shadow-lg, .shadow-md, .shadow-sm {
+    box-shadow: none !important;
+  }
+
+  /* Show dedicated print headers and elements */
+  .print-only {
+    display: block !important;
+  }
+
+  /* Page breaks optimization */
+  .print-break-inside-avoid {
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+  }
+
+  .print-page-break-before {
+    break-before: page !important;
+    page-break-before: always !important;
+  }
+
+  /* Grid preservation in print */
+  .print-grid-2 {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 16px !important;
+  }
+
+  .print-grid-6 {
+    display: grid !important;
+    grid-template-columns: repeat(6, minmax(0, 1fr)) !important;
+    gap: 8px !important;
+  }
+
+  /* Make containers full width without screen constraints */
+  main, .max-w-7xl, .max-w-5xl, .max-w-xl, .printable-charts-content {
+    max-width: 100% !important;
+    width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    box-shadow: none !important;
+    border: none !important;
+  }
+
+  /* Charts SVG rendering & Preservation */
+  svg {
+    max-width: 100% !important;
+    overflow: visible !important;
+  }
+
+  .recharts-responsive-container {
+    width: 100% !important;
+    min-height: 220px !important;
+  }
+
+  .recharts-wrapper {
+    width: 100% !important;
+    margin: 0 auto !important;
+  }
+
+  .recharts-surface {
+    overflow: visible !important;
+  }
+}
+
+@media screen {
+  .print-only {
+    display: none !important;
+  }
+}
+

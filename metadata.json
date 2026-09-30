@@ -1,0 +1,8 @@
+{
+  "name": "Remix Ficha de Registo \u0026 Gestão Ministerial - AD Leiria",
+  "description": "Formulário digital de registo para visitantes e membros (Ministério Integrarte - AD Leiria), gerador de QR Code e link de partilha, armazenamento de dados e sistema de agendamento e envio automático de versículos bíblicos via WhatsApp e E-mail.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

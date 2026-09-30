@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 880" width="100%" height="100%" fill="none">
+  <defs>
+    <linearGradient id="adleiria-grad" x1="20%" y1="10%" x2="80%" y2="90%">
+      <stop offset="0%" stop-color="#FF5520" />
+      <stop offset="45%" stop-color="#F03816" />
+      <stop offset="100%" stop-color="#D01A14" />
+    </linearGradient>
+  </defs>
+
+  <!-- EMBLEM GROUP (Center at X=400, Y=260) -->
+  <g id="adleiria-emblem" transform="translate(0, 0)">
+    <!-- 1. Central Gradient Circle -->
+    <circle
+      cx="400"
+      cy="260"
+      r="145"
+      fill="url(#adleiria-grad)"
+    />
+
+    <!-- 2. White Chevron Arrow inside Circle -->
+    <path
+      d="M 328 285 L 400 215 L 472 285"
+      stroke="#FFFFFF"
+      stroke-width="36"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      fill="none"
+    />
+
+    <!-- 3. Upper-Right Orbit Swoosh: Starts at ~9 o'clock, curves over top, past cross, down to ~3:30 o'clock -->
+    <!-- Center 400,260, R=205. Angle 180 (9 o'clock) is (195, 260).
+         Curves up through (400, 55) to ~1:15 (545, 115) where cross is,
+         and down to ~3:30 (595, 340). -->
+    <path
+      d="M 198 260 A 202 202 0 0 1 545 117"
+      stroke="url(#adleiria-grad)"
+      stroke-width="28"
+      stroke-linecap="round"
+      fill="none"
+    />
+    <path
+      d="M 555 130 A 202 202 0 0 1 585 330"
+      stroke="url(#adleiria-grad)"
+      stroke-width="28"
+      stroke-linecap="round"
+      fill="none"
+    />
+
+    <!-- 4. Top-Right Cross at (548, 88) -->
+    <!-- Vertical stem -->
+    <line
+      x1="548" y1="25"
+      x2="548" y2="135"
+      stroke="url(#adleiria-grad)"
+      stroke-width="28"
+      stroke-linecap="round"
+    />
+    <!-- Horizontal crossbar -->
+    <line
+      x1="498" y1="65"
+      x2="598" y2="65"
+      stroke="url(#adleiria-grad)"
+      stroke-width="28"
+      stroke-linecap="round"
+    />
+
+    <!-- 5. Lower-Bottom Orbit Swoosh: Starts at ~4:30 o'clock, curves around bottom to ~8 o'clock -->
+    <!-- From angle 45 deg (x=542, y=402) through bottom (400, 462) to angle 135 deg (x=258, y=402) -->
+    <path
+      d="M 540 405 A 202 202 0 0 1 258 405"
+      stroke="url(#adleiria-grad)"
+      stroke-width="28"
+      stroke-linecap="round"
+      fill="none"
+    />
+  </g>
+
+  <!-- TYPOGRAPHY: "adleiria" (Center at X=400, Y=640) -->
+  <text
+    x="400"
+    y="650"
+    text-anchor="middle"
+    font-family="Comfortaa, 'Varela Round', 'Nunito', 'Arial Rounded MT Bold', sans-serif"
+    font-size="140"
+    font-weight="700"
+    letter-spacing="-1px"
+    fill="#E1251B"
+  >adleiria</text>
+
+  <!-- SUBTITLE: "igreja evangélica" (Center at X=400, Y=740) -->
+  <text
+    x="400"
+    y="735"
+    text-anchor="middle"
+    font-family="Montserrat, 'Inter', 'Segoe UI', -apple-system, sans-serif"
+    font-size="48"
+    font-weight="400"
+    letter-spacing="1.5px"
+    fill="#475569"
+  >igreja evangélica</text>
+</svg>

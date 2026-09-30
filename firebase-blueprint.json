@@ -1,0 +1,122 @@
+{
+  "entities": {
+    "RegistrationRecord": {
+      "title": "RegistrationRecord",
+      "description": "Ficha de registo e acolhimento de visitantes e novos membros da AD Leiria",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "createdAt": { "type": "string" },
+        "decisionType": { "type": "string" },
+        "visitType": { "type": "string" },
+        "nome": { "type": "string" },
+        "sobrenome": { "type": "string" },
+        "telemovel": { "type": "string" },
+        "email": { "type": "string" },
+        "faixaEtaria": { "type": "string" },
+        "comoConheceu": { "type": "string" },
+        "comoConheceuDetalhe": { "type": "string" },
+        "autorizacaoRgpd": { "type": "boolean" },
+        "dataRegisto": { "type": "string" },
+        "celebracaoDomingo": { "type": "string" },
+        "assinatura": { "type": "string" },
+        "acompanhamento": { "type": "object" },
+        "tags": { "type": "array" }
+      },
+      "required": ["id", "nome", "sobrenome", "dataRegisto"]
+    },
+    "BibleVerse": {
+      "title": "BibleVerse",
+      "description": "Versículo bíblico cadastrado para envio aos membros",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "referencia": { "type": "string" },
+        "texto": { "type": "string" },
+        "categoria": { "type": "string" }
+      },
+      "required": ["id", "referencia", "texto"]
+    },
+    "ScheduledDispatch": {
+      "title": "ScheduledDispatch",
+      "description": "Agendamento de envio de mensagens",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "targetRecordId": { "type": "string" },
+        "dataEnvio": { "type": "string" },
+        "canal": { "type": "string" }
+      },
+      "required": ["id", "dataEnvio", "canal"]
+    },
+    "SentMessageLog": {
+      "title": "SentMessageLog",
+      "description": "Registo de mensagem enviada",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "tipo": { "type": "string" },
+        "dataEnvio": { "type": "string" },
+        "destinatarioNome": { "type": "string" }
+      },
+      "required": ["id", "tipo", "dataEnvio"]
+    },
+    "AppUser": {
+      "title": "AppUser",
+      "description": "Utilizador autorizado do sistema",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "email": { "type": "string" },
+        "name": { "type": "string" },
+        "role": { "type": "string" }
+      },
+      "required": ["id", "email", "name", "role"]
+    },
+    "AppSettings": {
+      "title": "AppSettings",
+      "description": "Definições e configurações gerais do sistema (ex: gateway WhatsApp, mensagens padrão)",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "enabled": { "type": "boolean" },
+        "whatsappEnabled": { "type": "boolean" },
+        "whatsappProvider": { "type": "string" },
+        "whatsappGatewayUrl": { "type": "string" },
+        "whatsappApiToken": { "type": "string" },
+        "whatsappInstanceId": { "type": "string" },
+        "emailEnabled": { "type": "boolean" },
+        "emailProvider": { "type": "string" },
+        "emailApiKey": { "type": "string" },
+        "emailSender": { "type": "string" },
+        "updatedAt": { "type": "string" }
+      }
+    }
+  },
+  "firestore": {
+    "/records/{recordId}": {
+      "schema": { "$ref": "#/entities/RegistrationRecord" },
+      "description": "Coleção de fichas de registo ministerial"
+    },
+    "/verses/{verseId}": {
+      "schema": { "$ref": "#/entities/BibleVerse" },
+      "description": "Coleção de versículos bíblicos"
+    },
+    "/schedules/{scheduleId}": {
+      "schema": { "$ref": "#/entities/ScheduledDispatch" },
+      "description": "Coleção de agendamentos de envio"
+    },
+    "/logs/{logId}": {
+      "schema": { "$ref": "#/entities/SentMessageLog" },
+      "description": "Coleção de histórico de mensagens enviadas"
+    },
+    "/users/{userId}": {
+      "schema": { "$ref": "#/entities/AppUser" },
+      "description": "Coleção de utilizadores autorizados"
+    },
+    "/settings/{settingId}": {
+      "schema": { "$ref": "#/entities/AppSettings" },
+      "description": "Coleção de configurações do sistema (ex: gateway_config)"
+    }
+  }
+}
